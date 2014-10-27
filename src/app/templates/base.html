@@ -6,6 +6,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.css">
 
     <!-- Custom styles for this web app -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -39,6 +40,10 @@
         ================================================== -->
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
     <script src={{ url_for('static', filename='js/requestAPI.js') }}></script>
+
     {% block foot_script %}{% endblock %}
 </html>

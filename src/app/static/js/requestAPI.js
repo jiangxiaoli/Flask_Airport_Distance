@@ -11,6 +11,11 @@
             $("#result").hide();
         });
 
+        $(".airport").autocomplete({
+            source: makeRequests,
+            minLength: 1
+        });
+
         //submit the request form to Flask server for SITA Airport API request
         $("#requestFrom").submit(function (e) {
             e.preventDefault();
@@ -33,6 +38,28 @@
             requestAPI(fromAP, toAP, unit);
         });
     });
+
+    function makeRequests(request, response) {
+        $.getJSON('/static/js/airports.json', function(data) {
+
+            var term = request.term.toLowerCase();
+
+            response($.map(data, function(item) {
+
+                var code = item.code.toLowerCase(); var name= item.name.toLowerCase();
+                if(code.indexOf(term) >=0 || name.indexOf(term) >=0){
+                    return {
+                        label: item.code + ", " + item.name,
+                        value: item.code
+                    };
+                } else {
+                    return null;
+                }
+
+            }));
+        });
+    }
+
 
     //SITA API user key
     var userKey= "a63bc8e425bd5180f99da2e0268ae56f";
@@ -58,5 +85,7 @@
             }
         });
     }
+
+
 
 })(jQuery);
