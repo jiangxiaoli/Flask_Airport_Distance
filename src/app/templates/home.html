@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="jumbotron">
+
+        <!-- airport request form  -->
+        <form id="requestFrom" class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <h2>Calculate Airport Distance</h2>
+            </div>
+
+
+            <div class="form-group">
+                <label for="departure" class="col-sm-4 control-label">Departure Airport</label>
+                <div class="col-sm-5">
+                    <input type="text" name="departure" class="form-control" id="departure" placeholder="Departure Airport" required autofocus>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="destination" class="col-sm-4 control-label">Destination Airport</label>
+                <div class="col-sm-5">
+                    <input type="text" name="destination" class="form-control" id="destination" placeholder="Destination Airport" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Distance Unit</label>
+                <div class="col-sm-8">
+                    <div class="radio">
+                        <label class="radio col-sm-2">
+                            <input type="radio" name="units"  value="mile" checked="">
+                            Miles
+                        </label>
+
+                        <label class="radio col-sm-2">
+                            <input type="radio" name="units"  value="km" >
+                            Km
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-lg btn-primary">Calculate</button>
+
+                    <button type="reset" id="clearResult" class="btn btn-lg btn-warning pull-right">Clear Result</button>
+                </div>
+            </div>
+
+        </form>
+
+
+
+    </div>
+
+    <div id="result" class="jumbotron">
+        <h2 id="distance"></h2>
+    </div>
+
+
+</div>
+
+{% endblock %}
+
