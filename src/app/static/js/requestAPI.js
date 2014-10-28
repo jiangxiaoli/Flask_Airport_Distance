@@ -39,6 +39,9 @@
         $("#requestFrom").submit(function (e) {
             e.preventDefault();
 
+            map.cleanRoute();
+            map.removeMarkers();
+
             //get form data
             var formdata = $("#requestFrom").serializeArray();
 

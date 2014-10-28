@@ -11,3 +11,8 @@ html, body, #map {
 .distance_text {
     color: #ff9900;
 }
+
+footer {
+    margin: 50px;
+    margin-left: 160px;
+}

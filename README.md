@@ -4,15 +4,44 @@ Airport-Distance
 > A web app that calculates the distance (in nautical miles) between two airports. 
 
 > Features:
-- Auto-complete the airports
-- Feature all airports in the US
-- Plot the trip on Google maps
 
+- Auto-complete the airports, with jQuery UI autocomplete
+
+- Feature all airports in the US, with self-build airports.js file
+
+- Calculate the distance of two airports, with SITA Airport API for airport info and distance
+
+- Plot the trip on Google maps, with Google Map API and gmaps.js library
+
+- Python Flask framwork to support cross domian issue with SITA API
+
+Installation
+------------
+- Check your Python Version, 2.7.* would be best
+```
+Python -V
+```
+- install Flask
+- install requests
+
+
+```
+pip install Flask
+pip install requests
+
+```
+
+- Run the app
+```
+python run.py
+```
+- The app will be running on http://127.0.0.1:5000/
  
 Tech
 -----------
 This work uses a number of open source projects to work properly:
 
+* [flask] - The Web microframework for perfectionists with deadlines.
 * [jQuery] - The Write Less, Do More, JavaScript Library. 
 * [jQuery UI] - Set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library
 * [Ajax] - jQuery library to load data from the server without a browser page refresh
@@ -30,7 +59,8 @@ License
 
 MIT
 
-[jQuery]:http://jquery.com
+[flask]: http://flask.pocoo.org/
+[jQuery]: http://jquery.com
 [jQuery UI]: http://jqueryui.com
 [Ajax]: http://api.jquery.com/category/ajax
 [bootstrap]:http://getbootstrap.com
