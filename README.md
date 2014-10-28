@@ -14,9 +14,12 @@ Tech
 This work uses a number of open source projects to work properly:
 
 * [jQuery] - The Write Less, Do More, JavaScript Library. 
+* [jQuery UI] - Set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library
+* [Ajax] - jQuery library to load data from the server without a browser page refresh
 * [bootstrap] - The most popular front-end framework for developing responsive, mobile first projects on the web.
 * [SITA Airport API] - The public API from SITA Developers, to retrieve information about airports.
-
+* [Google Maps JavaScript API V3] - Embed the robust functionality and usefulness of Google Maps into website
+* [gmaps.js] - Google Maps API with less pain and more fun
 
 Author
 --------------
@@ -28,5 +31,9 @@ License
 MIT
 
 [jQuery]:http://jquery.com
+[jQuery UI]: http://jqueryui.com
+[Ajax]: http://api.jquery.com/category/ajax
 [bootstrap]:http://getbootstrap.com
 [SITA Airport API]: https://www.developer.aero/Airport-API
+[Google Maps JavaScript API V3]: https://developers.google.com/maps/documentation/javascript
+[gmaps.js]: http://hpneo.github.io/gmaps

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="jumbotron">
+    <div class="well">
 
         <!-- airport request form  -->
         <form id="requestFrom" class="form-horizontal" role="form">
 
             <div class="form-group">
-                <h2>Calculate Airport Distance</h2>
+                <h3 class="center">Calculate Airport Distance</h3>
             </div>
 
 
@@ -46,20 +46,22 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
-                    <button type="submit" class="btn btn-lg btn-primary">Calculate</button>
+                    <button type="submit" class="btn btn-lg btn-warning">Calculate</button>
 
-                    <button type="reset" id="clearResult" class="btn btn-lg btn-warning pull-right">Clear Result</button>
+                    <button type="reset" id="clearResult" class="btn btn-lg btn-primary">Clear Result</button>
                 </div>
             </div>
 
         </form>
 
-
-
     </div>
 
-    <div id="result" class="jumbotron">
+    <div id="result" class="well center">
         <h2 id="distance"></h2>
+    </div>
+
+    <div id="map">
+
     </div>
 
 
