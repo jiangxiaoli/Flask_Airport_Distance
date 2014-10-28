@@ -4,16 +4,16 @@ Airport-Distance
 > A web app that calculates the distance (in nautical miles) between two airports. 
 
 > Features:
-
 - Auto-complete the airports, with jQuery UI autocomplete
-
 - Feature all airports in the US, with self-build airports.js file
-
 - Calculate the distance of two airports, with SITA Airport API for airport info and distance
-
 - Plot the trip on Google maps, with Google Map API and gmaps.js library
-
 - Python Flask framwork to support cross domian issue with SITA API
+
+Live Demo
+------------
+* [Live Demo] for Airport-Distance Web App running on AWS EC2.
+
 
 Installation
 ------------
@@ -67,3 +67,4 @@ MIT
 [SITA Airport API]: https://www.developer.aero/Airport-API
 [Google Maps JavaScript API V3]: https://developers.google.com/maps/documentation/javascript
 [gmaps.js]: http://hpneo.github.io/gmaps
+[Live Demo]: http://54.207.112.236/
