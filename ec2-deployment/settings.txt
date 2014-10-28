@@ -1,0 +1,52 @@
+//use ubuntu system in EC2 with Apache2 and WSGI
+  # apt-get install apache2 libapache2-mod-wsgi
+
+//install flask - http://flask.pocoo.org/docs/installation/
+  # sudo apt-get install python-virtualenv
+  # virtualenv venv
+  # . venv/bin/activate    //activate the corresponding environment
+  $ pip install Flask
+  $ pip install requests
+  
+// copy app git in /var/www 
+  # cd /var/www
+  # git clone https://github.com/jiangxiaoli/Flask_Airport_Distance.git
+  # cd Flask_Airport_Distance
+
+//Configure and Enable a New Virtual Host 
+// https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+//!!!WSGIPassAutherization On, very important for flask pass auth to apache2
+  # sudo nano /etc/apache2/sites-available/FlaskAD.conf
+  <VirtualHost *:80>
+    ServerName http://54.207.112.236/
+    WSGIScriptAlias / /var/www/Flask_Airport_Distance/src/flaskapp.wsgi
+      <Directory /var/www/Flask_Airport_Distance/src/>
+              Order allow,deny
+              Allow from all
+      </Directory>
+      ErrorLog ${APACHE_LOG_DIR}/error.log
+      LogLevel warn
+      CustomLog ${APACHE_LOG_DIR}/access.log combined
+  </VirtualHost>
+  
+  #sudo a2ensite FlaskAD
+
+//Create the .wsgi File
+  # cd /var/www/Flask_Airport_Distance/src/
+  # sudo nano flaskapp.wsgi
+  
+----------------------
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/Flask_Airport_Distance/src")
+
+from app import app as application
+-----------------------
+
+//Restart Apache
+  # sudo service apache2 restart 
+
+//check error log
+  # tailf /var/log/apache2/error.log
